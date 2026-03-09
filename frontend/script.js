@@ -1,5 +1,5 @@
 // ================= CONFIG =================
-const API_BASE = "https://task-dashboard-vef8.onrender.com/api";
+const API_BASE = "https://task-dashboard-vef8.onrender.com";
 
 // ================= TOKEN CHECK =================
 const token = localStorage.getItem("token");
