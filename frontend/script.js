@@ -6,22 +6,22 @@ const token = localStorage.getItem("token");
 if (!token) window.location.href = "login.html";
 
 // ================= AUTO LOGOUT =================
-function checkTokenExpiry() {
-  const token = localStorage.getItem("token");
-  if (!token) return;
+// function checkTokenExpiry() {
+//   const token = localStorage.getItem("token");
+//   if (!token) return;
 
-  const payload = JSON.parse(atob(token.split('.')[1]));
-  const expiry = payload.exp * 1000;
-  const now = Date.now();
-  const timeLeft = expiry - now;
+//   const payload = JSON.parse(atob(token.split('.')[1]));
+//   const expiry = payload.exp * 1000;
+//   const now = Date.now();
+//   const timeLeft = expiry - now;
 
-  if (timeLeft <= 0) logout();
-  else setTimeout(() => {
-    alert("Session expired. Please login again.");
-    logout();
-  }, timeLeft);
-}
-checkTokenExpiry();
+//   if (timeLeft <= 0) logout();
+//   else setTimeout(() => {
+//     alert("Session expired. Please login again.");
+//     logout();
+//   }, timeLeft);
+// }
+// checkTokenExpiry();
 
 // ================= GLOBAL STATE =================
 let allTasks = [];
