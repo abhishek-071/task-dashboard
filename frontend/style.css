@@ -1,244 +1,201 @@
+/* ===== PREMIUM MODERN THEME ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --danger: #ef4444;
+  --success: #10b981;
+  --radius: 12px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: #f4f6f9;
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ===== CARD ===== */
+.card {
+  background: var(--card);
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--text);
+}
+
+/* ===== INPUT ===== */
+.input-group {
+  margin-bottom: 18px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+}
+
+/* ===== BUTTON ===== */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* ===== LINKS ===== */
+.link {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.link a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===== DASHBOARD ===== */
 .dashboard {
+  width: 95%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.topbar {
+  background: var(--card);
+  padding: 18px 25px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
   display: flex;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sidebar {
   width: 220px;
-  background: #111827;
-  color: rgb(34, 165, 205);
+  background: var(--card);
+  border-radius: var(--radius);
   padding: 20px;
-}
-
-.sidebar h2 {
-  margin-bottom: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .sidebar li {
+  list-style: none;
   padding: 10px;
-  margin-bottom: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 5px;
+  margin-bottom: 8px;
+  color: var(--text);
+  transition: 0.2s;
 }
 
 .sidebar li:hover,
 .sidebar .active {
-  background: #1f2937;
-}
-
-.main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.navbar {
-  background: white;
-  padding: 15px 25px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: var(--primary);
+  color: white;
 }
 
 .content {
-  padding: 25px;
-}
-
-.input-section {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin-left: 20px;
 }
 
-button {
-  padding: 8px 12px;
-  border: none;
-  background: #2563eb;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
+.layout {
+  display: flex;
 }
 
-button:hover {
-  background: #1d4ed8;
-}
-
-.filters {
-  margin-bottom: 15px;
+/* ===== TASK LIST ===== */
+.task-input {
   display: flex;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
-ul {
-  list-style: none;
+.task-input input {
+  flex: 1;
 }
 
-li {
-  background: white;
-  padding: 10px;
+.task-list li {
+  background: var(--card);
+  padding: 12px 16px;
+  border-radius: var(--radius);
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
 }
 
 .completed {
   text-decoration: line-through;
-  opacity: 0.6;
+  color: var(--muted);
 }
 
-.actions {
-  display: flex;
-  gap: 5px;
+/* ===== PROFILE ===== */
+.profile-card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  max-width: 600px;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-
-  .dashboard {
-    flex-direction: column;
-  }
-}
-
-  .task-info {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.dark body {
-  background: #111827;
-}
-
-.dark .navbar,
-.dark li,
-.dark .modal-content {
-  background: #1f2937;
-  color: white;
-}
-/* ===== AUTH PAGES ===== */
-
-.auth-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #4e73df, #1cc88a);
-  height: 100vh;
+/* ===== UTIL ===== */
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.auth-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.auth-card {
-  background: #ffffff;
-  padding: 40px;
-  width: 350px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  text-align: center;
-}
-
-.auth-card h2 {
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.subtitle {
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 25px;
-}
-
-.auth-card input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  font-size: 14px;
-  transition: border 0.3s;
-}
-
-.auth-card input:focus {
-  border-color: #4e73df;
-  outline: none;
-}
-
-.auth-card button {
-  width: 100%;
-  padding: 12px;
-  background: #4e73df;
-  border: none;
-  color: white;
-  font-size: 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.1s;
-}
-
-.auth-card button:hover {
-  background: #2e59d9;
-  transform: translateY(-2px);
-}
-
-.switch {
-  margin-top: 18px;
-  font-size: 14px;
-}
-
-.switch a {
-  color: #4e73df;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.switch a:hover {
-  text-decoration: underline;
-}
+.mt-20 { margin-top: 20px; }
