@@ -9,70 +9,40 @@
 
 <body>
 
-  <div class="dashboard">
+ <div class="app">
+  
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2 class="logo">MyApp</h2>
+    <ul>
+      <li onclick="showDashboard(this)">Dashboard</li>
+      <li onclick="goToTasks(this)" class="active">Tasks</li>
+      <li onclick="openSettings()">Settings</li>
+      <li onclick="window.location.href='profile.html'">Profile</li>
+    </ul>
+  </aside>
 
-    <aside class="sidebar">
-      <h2>MyApp</h2>
-      <ul>
-        <li class="active" onclick="showDashboard(this)">Dashboard</li>
-        <li onclick="goToTasks(this)">Tasks</li>
-        <li onclick="openSettings()">Settings</li>
-        <li onclick="window.location.href='profile.html'">Profile</li>
-      </ul>
-    </aside>
+  <!-- Main Content -->
+  <main class="main">
+    <h1>Task Manager</h1>
 
-    <div class="main">
-
-      <nav class="navbar">
-        <h1>Task Manager</h1>
-      </nav>
-
-      <div class="content">
-
-        <!-- ================= Dashboard Section ================= -->
-        <div id="dashboardSection">
-          <h2>Add New Task</h2>
-          <div class="input-section">
-            <input type="text" id="taskInput" placeholder="Enter new task">
-            <button onclick="addTask()">Add</button>
-          </div>
-        </div>
-
-        <!-- ================= Tasks Section ================= -->
-        <div id="taskSection" style="display:none;">
-          <h2>All Tasks</h2>
-
-          <div class="filters">
-            <button onclick="setFilter('all')">All</button>
-            <button onclick="setFilter('active')">Active</button>
-            <button onclick="setFilter('completed')">Completed</button>
-          </div>
-
-          <div class="task-info">
-            <span id="taskCount">0 Tasks</span>
-          </div>
-
-          <ul id="taskList"></ul>
-        </div>
-
-      </div>
-
+    <!-- Filters -->
+    <div class="filters">
+      <button onclick="setFilter('all')">All</button>
+      <button onclick="setFilter('active')">Active</button>
+      <button onclick="setFilter('completed')">Completed</button>
     </div>
 
-  </div>
-
-  <script src="script.js"></script>
-
-  <div id="settingsModal" class="modal">
-    <div class="modal-content">
-      <h3>Settings</h3>
-
-      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-      <button onclick="clearAllTasks()">Clear All Tasks</button>
-      <button onclick="logout()">Logout</button>
-
-      <button onclick="closeSettings()">Close</button>
+    <!-- Add Task -->
+    <div class="add-task">
+      <input id="taskInput" placeholder="Enter new task..." />
+      <button onclick="addTask()">Add</button>
     </div>
+
+    <!-- Task List -->
+    <ul id="taskList" class="task-list"></ul>
+  </main>
+
   </div>
 
 </body>
