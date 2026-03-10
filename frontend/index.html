@@ -1,26 +1,59 @@
-<main class="main">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Task Dashboard</title>
+<link rel="stylesheet" href="style.css" />
+</head>
 
-  <!-- DASHBOARD SECTION -->
-  <section id="dashboardSection">
-    <h1>Dashboard</h1>
+<body>
 
-    <div class="add-task">
-      <input id="taskInput" placeholder="Enter new task..." />
-      <button onclick="addTask()">Add Task</button>
-    </div>
-  </section>
+<div class="layout">
 
-  <!-- TASKS SECTION -->
-  <section id="tasksSection" style="display:none;">
-    <h1>My Tasks</h1>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>MyApp</h2>
+    <ul>
+      <li class="active" onclick="showDashboard(this)">Dashboard</li>
+      <li onclick="goToTasks(this)">Tasks</li>
+      <li onclick="window.location.href='profile.html'">Profile</li>
+      <li onclick="logout()">Logout</li>
+    </ul>
+  </aside>
 
-    <div class="filters">
-      <button onclick="setFilter('all')">All</button>
-      <button onclick="setFilter('active')">Active</button>
-      <button onclick="setFilter('completed')">Completed</button>
-    </div>
+  <!-- Main -->
+  <main class="main">
 
-    <ul id="taskList" class="task-list"></ul>
-  </section>
+    <!-- Dashboard -->
+    <section id="dashboardSection">
+      <h1>Dashboard</h1>
+      <div class="card">
+        <h3>Add New Task</h3>
+        <div class="add-task">
+          <input id="taskInput" placeholder="Enter task..." />
+          <button onclick="addTask()">Add Task</button>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <!-- Tasks -->
+    <section id="tasksSection" style="display:none;">
+      <h1>My Tasks</h1>
+
+      <div class="filters">
+        <button onclick="setFilter('all')">All</button>
+        <button onclick="setFilter('active')">Active</button>
+        <button onclick="setFilter('completed')">Completed</button>
+      </div>
+
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
