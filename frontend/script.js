@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("dashboardSection").style.display = "block";
+  document.getElementById("tasksSection").style.display = "none";
+});
 // ================= CONFIG =================
 const API_BASE = "https://task-dashboard-vef8.onrender.com";
 
