@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
   <title>Login</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="auth-body">
+<body>
 
-  <div class="auth-container">
-    <div class="auth-card">
-      <h2>Welcome👋</h2>
-      <p class="subtitle">Login to manage your tasks</p>
+<div class="card">
+  <h2>Welcome👋</h2>
 
-      <input type="email" id="email" placeholder="Enter your email" />
-      <input type="password" id="password" placeholder="Enter your password" />
-
-      <button onclick="login()">Login</button>
-
-      <p class="switch">
-        Don't have an account?
-        <a href="register.html">Register here</a>
-      </p>
-    </div>
+  <div class="input-group">
+    <input type="email" id="email" placeholder="Enter Email">
   </div>
 
-  <script src="login.js"></script>
+  <div class="input-group">
+    <input type="password" id="password" placeholder="Enter Password">
+  </div>
+
+  <button onclick="login()">Login</button>
+
+  <div class="link">
+    Don’t have an account? <a href="register.html">Register</a>
+  </div>
+</div>
+
+<script src="login.js"></script>
 </body>
 </html>
