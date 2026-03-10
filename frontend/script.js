@@ -197,19 +197,3 @@ function showDashboard(element) {
   if (dashboard) dashboard.style.display = "block";
   if (task) task.style.display = "none";
 }
-function showDashboard(el){
-  document.getElementById("dashboardSection").style.display = "block";
-  document.getElementById("tasksSection").style.display = "none";
-  setActive(el);
-}
-
-function goToTasks(el){
-  document.getElementById("dashboardSection").style.display = "none";
-  document.getElementById("tasksSection").style.display = "block";
-  setActive(el);
-}
-
-function setActive(el){
-  document.querySelectorAll(".sidebar li").forEach(li => li.classList.remove("active"));
-  el.classList.add("active");
-}
