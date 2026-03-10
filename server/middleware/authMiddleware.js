@@ -12,7 +12,7 @@ const protect = async (req, res, next) => {
     token = req.headers.authorization.split(" ")[1];
 
     try {
-      const decoded = jwt.verify(token, "supersecretkey");
+      const decoded = jwt.verify(token, "mysecretkey123");
 
       req.user = await User.findById(decoded.id).select("-password");
 
